@@ -1,0 +1,102 @@
+.transactionList {
+  background-color: #f2f2f2;
+  min-height: 72px;
+  border-radius: 10px;
+}
+.title {
+  text-align: left;
+  color: #fff;
+  font-family: Ubuntu;
+  font-weight: 700;
+  font-style: Italic;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.expenseItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #9b9b9b;
+}
+.category {
+  text-transform: capitalize;
+  font-family: Open Sans;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.date {
+  font-family: Open Sans;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #9b9b9b;
+}
+.iconCircle {
+  padding: 7px 4px;
+  background-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+}
+
+.edit,
+.delete {
+  display: flex;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+}
+.recenttransation {
+  position: relative;
+}
+.expenseList {
+  padding: 40px 20px 70px;
+}
+.pageNumber {
+  color: #fff;
+  padding: 8px 15px;
+  background-color: #43967b;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+.pageButton {
+  width: 37px;
+  height: 37px;
+  border-radius: 15px;
+  color: #222222;
+  background: linear-gradient(0deg, #f1f1f1, #f1f1f1),
+    linear-gradient(0deg, #f1f1f1, #f1f1f1),
+    linear-gradient(0deg, #f1f1f1, #f1f1f1),
+    linear-gradient(0deg, #f1f1f1, #f1f1f1);
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+.paginationControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+}
+@media only screen and (max-width: 800px) {
+  .title {
+    text-align: center;
+  }
+}

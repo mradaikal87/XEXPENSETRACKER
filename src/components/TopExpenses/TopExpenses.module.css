@@ -1,0 +1,58 @@
+.title {
+  text-align: left;
+  color: #fff;
+  font-family: Ubuntu;
+  font-weight: 700;
+  font-style: Italic;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.transationChart {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 30px 15px;
+  flex-direction: column;
+  height: 69%;
+}
+.list {
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* .percentage {
+  display: flex;
+  width: 90%;
+  height: 10px;
+} */
+
+.listItem {
+  margin-bottom: 16px;
+}
+
+.barWrapper {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.percentage {
+  height: 10px;
+  border-radius: 4px;
+}
+@media only screen and (max-width: 800px) {
+  .title {
+    text-align: center;
+  }
+}
