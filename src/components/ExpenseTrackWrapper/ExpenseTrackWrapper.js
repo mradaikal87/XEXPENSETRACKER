@@ -7,6 +7,19 @@ import Expenses from "../Expenses/Expenses";
 import TopExpenses from "../TopExpenses/TopExpences";
 
 export default function ExpenseTrackWrapper() {
+
+  useEffect(() => {
+    if (localStorage.getItem("walletAmount") === null) {
+      localStorage.setItem("walletAmount", JSON.stringify(5000));
+    }
+    if (localStorage.getItem("expensesList") === null) {
+      localStorage.setItem("expensesList", JSON.stringify([]));
+    }
+    if (localStorage.getItem("totalExpenses") === null) {
+      localStorage.setItem("totalExpenses", JSON.stringify(0));
+    }
+  }, []);
+
   const [walletAmount, setWalletAmount] = useState(() => {
     const saved = localStorage.getItem("walletAmount");
     return saved ? JSON.parse(saved) : 5000;
@@ -147,6 +160,7 @@ export default function ExpenseTrackWrapper() {
   const travelPercentage = walletAmount
     ? ((categoryTotals.travel || 0) / walletAmount) * 100
     : 0;
+
   return (
     <section className={styles.expenseSection}>
       <div className={styles.container}>
