@@ -46,7 +46,6 @@ export default function RecentTransaction({
         return faPencil;
     }
   };
-
   return (
     <div className={styles.recenttransation}>
       <h2 className={styles.title}>Recent Transactions</h2>
@@ -65,10 +64,11 @@ export default function RecentTransaction({
                     />
                   </div>
                   <div>
-                    <div className={styles.category}>
+                    <div className={styles.category}>{expense.title}</div>
+                    {/* <div className={styles.category}>
                       {expense.category.charAt(0).toUpperCase() +
                         expense.category.slice(1)}
-                    </div>
+                    </div> */}
                     <div className={styles.date}>{expense.date}</div>
                   </div>
                 </div>
@@ -78,13 +78,19 @@ export default function RecentTransaction({
                     className={`${styles.iconButton} ${styles.delete} red`}
                     onClick={() => handleDeleteExpense(startIndex + index)}
                   >
-                    <FontAwesomeIcon icon={faCircleXmark} style={{ fontSize: "17px" }} />
+                    <FontAwesomeIcon
+                      icon={faCircleXmark}
+                      style={{ fontSize: "17px" }}
+                    />
                   </button>
                   <button
                     className={`${styles.iconButton} ${styles.edit} orange`}
                     onClick={() => handleEditExpense(startIndex + index)}
                   >
-                    <FontAwesomeIcon icon={faPencil} style={{ fontSize: "17px" }} />
+                    <FontAwesomeIcon
+                      icon={faPencil}
+                      style={{ fontSize: "17px" }}
+                    />
                   </button>
                 </div>
               </div>

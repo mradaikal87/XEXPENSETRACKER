@@ -145,7 +145,6 @@ export default function ExpenseTrackWrapper() {
   const travelPercentage = walletAmount
     ? ((categoryTotals.travel || 0) / walletAmount) * 100
     : 0;
-
   return (
     <section className={styles.expenseSection}>
       <div className={styles.container}>
@@ -209,7 +208,7 @@ export default function ExpenseTrackWrapper() {
               onChange={(e) => setAmountInput(e.target.value)}
             />
             <button type="submit" className="button orange">
-              Add balance
+              Add Balance
             </button>
             <button
               type="button"
