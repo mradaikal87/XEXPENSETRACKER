@@ -8,7 +8,7 @@ import TopExpenses from "../TopExpenses/TopExpences";
 
 export default function ExpenseTrackWrapper() {
 
-  useEffect(() => {
+   if (typeof window !== "undefined") {
     if (localStorage.getItem("walletAmount") === null) {
       localStorage.setItem("walletAmount", JSON.stringify(5000));
     }
@@ -18,7 +18,7 @@ export default function ExpenseTrackWrapper() {
     if (localStorage.getItem("totalExpenses") === null) {
       localStorage.setItem("totalExpenses", JSON.stringify(0));
     }
-  }, []);
+  }
 
   const [walletAmount, setWalletAmount] = useState(() => {
     const saved = localStorage.getItem("walletAmount");
