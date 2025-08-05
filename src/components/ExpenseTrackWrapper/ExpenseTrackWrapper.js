@@ -7,13 +7,12 @@ import Expenses from "../Expenses/Expenses";
 import TopExpenses from "../TopExpenses/TopExpences";
 
 export default function ExpenseTrackWrapper() {
-
-   if (typeof window !== "undefined") {
+  if (typeof window !== "undefined") {
     if (localStorage.getItem("walletAmount") === null) {
       localStorage.setItem("walletAmount", JSON.stringify(5000));
     }
-    if (localStorage.getItem("expensesList") === null) {
-      localStorage.setItem("expensesList", JSON.stringify([]));
+    if (localStorage.getItem("expenses") === null) {
+      localStorage.setItem("expenses", JSON.stringify([])); 
     }
     if (localStorage.getItem("totalExpenses") === null) {
       localStorage.setItem("totalExpenses", JSON.stringify(0));
@@ -26,7 +25,7 @@ export default function ExpenseTrackWrapper() {
   });
 
   const [expensesList, setExpensesList] = useState(() => {
-    const saved = localStorage.getItem("expensesList");
+    const saved = localStorage.getItem("expenses"); 
     return saved ? JSON.parse(saved) : [];
   });
 
@@ -51,7 +50,7 @@ export default function ExpenseTrackWrapper() {
   }, [walletAmount]);
 
   useEffect(() => {
-    localStorage.setItem("expensesList", JSON.stringify(expensesList));
+    localStorage.setItem("expenses", JSON.stringify(expensesList)); 
     const total = expensesList.reduce(
       (sum, item) => sum + Number(item.amount),
       0
