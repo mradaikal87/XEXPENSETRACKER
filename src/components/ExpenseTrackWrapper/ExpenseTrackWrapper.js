@@ -82,6 +82,7 @@ export default function ExpenseTrackWrapper() {
 
       const updatedList = [...expensesList];
       updatedList[editIndex] = {
+        ...updatedList[editIndex],
         category: expenseCategory,
         title: expenseTitle,
         amount,
@@ -93,6 +94,7 @@ export default function ExpenseTrackWrapper() {
       setEditIndex(null);
     } else {
       const newExpense = {
+        id: Date.now(),
         category: expenseCategory,
         title: expenseTitle,
         amount,

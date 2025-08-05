@@ -69,7 +69,13 @@ export default function RecentTransaction({
                       {expense.category.charAt(0).toUpperCase() +
                         expense.category.slice(1)}
                     </div> */}
-                    <div className={styles.date}>{expense.date}</div>
+                    <div className={styles.date}>
+                      {new Date(expense.date).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </div>
                   </div>
                 </div>
                 <div className={styles.right}>
